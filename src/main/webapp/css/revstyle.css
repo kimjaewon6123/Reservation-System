@@ -1,0 +1,1725 @@
+.screen {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .div {
+  background-color: #ffffff;
+  width: 375px;
+  height: 812px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.screen .rectangle {
+  width: 375px;
+  height: 185px;
+  top: 54px;
+  background-color: #ece6e6;
+  position: absolute;
+  left: 0;
+}
+
+.screen .status-bars {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 3px 0px 0px;
+  position: absolute;
+  top: 0;
+  left: -7px;
+}
+
+.screen .statusbar-ios {
+  position: relative;
+  width: 390px;
+  height: 47px;
+}
+
+.screen .left-side {
+  position: absolute;
+  width: 54px;
+  height: 21px;
+  top: 14px;
+  left: 27px;
+}
+
+.screen .statusbars-time {
+  position: relative;
+  height: 21px;
+  border-radius: 24px;
+}
+
+.screen .time {
+  position: absolute;
+  width: 54px;
+  top: 1px;
+  left: 0;
+  font-family: var(--body-bold-font-family);
+  font-weight: var(--body-bold-font-weight);
+  color: var(--label-colorlightprimary);
+  font-size: var(--body-bold-font-size);
+  text-align: center;
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  white-space: nowrap;
+  font-style: var(--body-bold-font-style);
+}
+
+.screen .right-side {
+  position: absolute;
+  width: 78px;
+  height: 13px;
+  top: 19px;
+  left: 286px;
+}
+
+.screen .icon-mobile-signal {
+  position: absolute;
+  width: 18px;
+  height: 12px;
+  top: 0;
+  left: 0;
+}
+
+.screen .wifi {
+  position: absolute;
+  width: 17px;
+  height: 12px;
+  top: 0;
+  left: 26px;
+}
+
+.screen .statusbar-battery {
+  position: absolute;
+  width: 27px;
+  height: 13px;
+  top: 0;
+  left: 51px;
+}
+
+.screen .overlap-group {
+  position: absolute;
+  width: 25px;
+  height: 14px;
+  top: -1px;
+  left: 0;
+}
+
+.screen .outline {
+  position: absolute;
+  width: 25px;
+  height: 13px;
+  top: 1px;
+  left: 0;
+}
+
+.screen .percentage {
+  position: absolute;
+  height: 13px;
+  top: 0;
+  left: 6px;
+  font-family: "SF Pro Text-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--label-colordarkprimary);
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0.06px;
+  line-height: 13px;
+  white-space: nowrap;
+}
+
+.screen .battery-end {
+  position: absolute;
+  width: 1px;
+  height: 4px;
+  top: 5px;
+  left: 26px;
+}
+
+.screen .text-wrapper {
+  position: absolute;
+  top: 210px;
+  left: 142px;
+  font-family: "SF Pro Display", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222222;
+  letter-spacing: -0.3px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.screen .vector {
+  position: absolute;
+  width: 7px;
+  height: 12px;
+  top: 226px;
+  left: 119px;
+}
+
+.screen .img {
+  position: absolute;
+  width: 7px;
+  height: 12px;
+  top: 226px;
+  left: 245px;
+}
+
+.screen .text-wrapper-2 {
+  position: absolute;
+  top: 222px;
+  left: 45px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #8d4bf6;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.screen .navbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+  position: absolute;
+  top: 268px;
+  left: 42px;
+}
+
+.screen .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  color: #585858;
+  font-size: 12px;
+  white-space: nowrap;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .navbar-2 {
+  width: 299px;
+  top: 304px;
+  left: 41px;
+  position: absolute;
+  height: 16px;
+}
+
+.screen .text-wrapper-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #c2c1c1;
+  font-size: 13px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-5 {
+  left: 46px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-6 {
+  left: 92px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-7 {
+  left: 138px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-8 {
+  left: 184px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-9 {
+  left: 229px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-10 {
+  left: 279px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .navbar-3 {
+  width: 297px;
+  top: 350px;
+  left: 45px;
+  position: absolute;
+  height: 16px;
+}
+
+.screen .text-wrapper-11 {
+  left: 274px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .navbar-4 {
+  width: 299px;
+  top: 396px;
+  left: 44px;
+  position: absolute;
+  height: 16px;
+}
+
+.screen .text-wrapper-12 {
+  left: 43px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-13 {
+  left: 90px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-14 {
+  left: 135px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-15 {
+  left: 181px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-16 {
+  left: 226px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-17 {
+  left: 271px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .navbar-5 {
+  width: 303px;
+  top: 442px;
+  left: 41px;
+  position: absolute;
+  height: 16px;
+}
+
+.screen .text-wrapper-18 {
+  left: 183px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-19 {
+  left: 229px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-20 {
+  left: 273px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .overlap {
+  position: absolute;
+  width: 304px;
+  height: 34px;
+  top: 478px;
+  left: 41px;
+}
+
+.screen .ellipse {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 0;
+  left: 37px;
+  background-color: #8d4bf6;
+  border-radius: 17px;
+}
+
+.screen .navbar-6 {
+  width: 304px;
+  top: 9px;
+  left: 0;
+  position: absolute;
+  height: 16px;
+}
+
+.screen .text-wrapper-21 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #c2c1c1;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-22 {
+  left: 46px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-23 {
+  left: 92px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-24 {
+  left: 138px;
+  color: #c2c1c1;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-25 {
+  left: 184px;
+  color: #585858;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-26 {
+  left: 229px;
+  color: #585858;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-27 {
+  left: 274px;
+  color: #585858;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .div-wrapper {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 591px;
+  left: 72px;
+  background-color: #ffffff;
+  border-radius: 22px;
+  border: 1px solid;
+  border-color: #808080;
+}
+
+.screen .text-wrapper-28 {
+  top: 12px;
+  left: 12px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #808080;
+  font-size: 13px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .group {
+  position: absolute;
+  width: 300px;
+  height: 16px;
+  top: 532px;
+  left: 42px;
+}
+
+.screen .text-wrapper-29 {
+  left: 47px;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #585858;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-30 {
+  left: 97px;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #585858;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-31 {
+  left: 142px;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #585858;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  .text-wrapper-35 {
+  color: #808080 !important;  /* 회색 글씨로 고정 */
+}
+  line-height: normal;
+}
+
+.screen .text-wrapper-32 {
+  left: 188px;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #585858;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-33 {
+  left: 233px;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #585858;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-34 {
+  left: 278px;
+  position: absolute;
+  top: 0;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #585858;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .overlap-wrapper {
+  position: absolute;
+  width: 46px;
+  height: 44px;
+  top: 591px;
+  left: 21px;
+}
+
+.screen .overlap-2 {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 22px;
+}
+
+.screen .text-wrapper-35 {
+  top: 14px;
+  left: 12px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 13px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .overlap-group-wrapper {
+  position: absolute;
+  width: 46px;
+  height: 44px;
+  top: 591px;
+  left: 123px;
+}
+
+.screen .overlap-3 {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  border: 1px solid;
+  border-color: #808080;
+}
+
+.screen .text-wrapper-36 {
+  top: 13px;
+  left: 10px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #757575;
+  font-size: 13px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .group-2 {
+  position: absolute;
+  width: 46px;
+  height: 44px;
+  top: 591px;
+  left: 174px;
+}
+
+.screen .group-3 {
+  position: absolute;
+  width: 46px;
+  height: 44px;
+  top: 591px;
+  left: 225px;
+}
+
+.screen .group-4 {
+  position: absolute;
+  width: 46px;
+  height: 44px;
+  top: 591px;
+  left: 276px;
+}
+
+.screen .group-5 {
+  position: absolute;
+  width: 46px;
+  height: 44px;
+  top: 591px;
+  left: 327px;
+}
+
+.screen .text-wrapper-37 {
+  top: 13px;
+  left: 11px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #757575;
+  font-size: 13px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .line {
+  position: absolute;
+  width: 323px;
+  height: 1px;
+  top: 571px;
+  left: 25px;
+}
+
+.screen .group-6 {
+  position: absolute;
+  width: 77px;
+  height: 43px;
+  top: 659px;
+  left: 20px;
+}
+
+.screen .element-wrapper {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  color: #495057;
+}
+
+.screen .element {
+  width: 75px;
+  height: 43px;
+  top: -1px;
+  left: -1px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 400;
+  color: #8d4bf6;
+  font-size: 12px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .span {
+  font-weight: 500;
+}
+
+.screen .text-wrapper-38 {
+  font-family: "Pretendard-Bold", Helvetica;
+  font-weight: 700;
+}
+
+.screen .group-7 {
+  position: absolute;
+  width: 77px;
+  height: 43px;
+  top: 659px;
+  left: 104px;
+}
+
+.screen .group-8 {
+  position: absolute;
+  width: 335px;
+  height: 44px;
+  top: 721px;
+  left: 19px;
+}
+
+.screen .overlap-4 {
+  position: relative;
+  width: 333px;
+  height: 44px;
+  border-radius: 6px;
+  border: 0.7px solid;
+  border-color: #d9d9d9;
+}
+
+.screen .text-wrapper-39 {
+  width: 244px;
+  height: 19px;
+  top: 13px;
+  left: 44px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #585858;
+  font-size: 12px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .group-9 {
+  position: absolute;
+  width: 77px;
+  height: 43px;
+  top: 659px;
+  left: 188px;
+}
+
+.screen .overlap-5 {
+  position: relative;
+  width: 75px;
+  height: 43px;
+  background-color: #8d4bf6;
+  border-radius: 6px;
+}
+
+.screen .text-wrapper-40 {
+  width: 55px;
+  height: 18px;
+  top: 13px;
+  left: 10px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 12px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .group-10 {
+  position: absolute;
+  width: 77px;
+  height: 43px;
+  top: 659px;
+  left: 272px;
+}
+
+.screen .group-11 {
+  position: absolute;
+  width: 77px;
+  height: 43px;
+  top: 659px;
+  left: 356px;
+}
+
+.screen .rectangle {
+  width: 375px;
+  height: 185px;
+  top: -686px;
+  background-color: #ece6e6;
+  position: absolute;
+  left: 0;
+}
+
+.screen .group-12 {
+  position: absolute;
+  width: 385px;
+  height: 154px;
+  top: 54px;
+  left: -2px;
+}
+
+.screen .overlap-6 {
+  position: relative;
+  width: 375px;
+  height: 154px;
+  background-image: url(img/ㅇㅇ.png);
+  background-size: cover;
+  background-position: center;
+  left: 0;
+}
+
+.screen .overlap-group-2 {
+  position: absolute;
+  width: 122px;
+  height: 25px;
+  top: 13px;
+  left: 102px;
+}
+
+.screen .rectangle-2 {
+  width: 109px;
+  height: 25px;
+  top: 0;
+  background-color: #979797;
+  position: absolute;
+  left: 0;
+}
+
+.screen .text-wrapper-41 {
+  height: 20px;
+  top: 3px;
+  left: 0;
+  font-family: "Pretendard-Bold", Helvetica;
+  font-weight: 700;
+  color: #313131;
+  font-size: 17px;
+  white-space: nowrap;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-42 {
+  height: 28px;
+  top: 3px;
+  left: 4px;
+  font-family: "Pretendard-Bold", Helvetica;
+  font-weight: 700;
+  color: #313131;
+  font-size: 23px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .p {
+  height: 12px;
+  top: 8px;
+  left: 4px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: transparent;
+  font-size: 10px;
+  white-space: nowrap;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .text-wrapper-43 {
+  color: #717171;
+}
+
+.screen .text-wrapper-44 {
+  color: #acacac;
+}
+
+.ellipse {
+  display: none !important;
+}
+
+/* 1명 버튼 - 기본 비선택 상태 디자인 */
+.overlap-2 {
+  background-color: white !important;
+  border-radius: 22px;
+  border: 1px solid #808080;
+}
+
+.text-wrapper-35 {
+  color: #808080 !important;  /* 흰색 → 회색 */
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #f3f0ff !important;
+  color: #495057 !important;
+  border-radius: 8px !important;
+  border: 1px solid #e5dbff !important;
+}
+
+.selected .text-wrapper-36,
+.selected .text-wrapper-35,
+.selected .text-wrapper-37,
+.selected .text-wrapper-28 {
+  color: white !important;
+}
+
+.selected .overlap-3,
+.selected .overlap-2,
+.selected .div-wrapper,
+.selected .overlap-group-wrapper {
+  background-color: #8d4bf6 !important;
+  border-radius: 22px !important;
+  border: none !important;
+}
+
+.selected .overlap-5 {
+  background-color: #8d4bf6 !important;
+}
+
+.selected .text-wrapper-40 {
+  color: white !important;
+}
+
+/* ❗ ellipse 제거 (오늘 표시 원) */
+.ellipse {
+  display: none !important;
+}
+
+/* ❗ 1명 버튼의 초기 상태는 흰 배경, 회색 테두리 + 회색 글씨 */
+.overlap-2 {
+  background-color: white !important;
+  border-radius: 22px;
+  border: 1px solid #808080;
+}
+
+.text-wrapper-35 {
+  color: #808080 !important;
+}
+
+/* ❗ 2명 버튼 초기 상태도 회색 */
+.div-wrapper {
+  background-color: white !important;
+  border: 1px solid #808080;
+  border-radius: 22px;
+}
+
+.text-wrapper-28 {
+  color: #808080 !important;
+}
+
+.screen .time-button {
+  margin: 8px 20px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.screen .time-button:hover .element-wrapper {
+  transform: translateY(-2px);
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.screen .time-button.selected .element-wrapper {
+  background-color: #f3f0ff;
+  color: #495057;
+  border-color: #e5dbff;
+  box-shadow: none;
+}
+
+.screen .time-button .element {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.screen .time-button .timeslot-label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.screen .time-button .status-label {
+  display: block;
+  font-size: 11px;
+  line-height: 1;
+  color: #868e96;
+}
+
+.screen .time-button.available .status-label {
+  color: #40c057;
+}
+
+.screen .time-button.full .status-label {
+  color: #fa5252;
+}
+
+.screen .selected {
+  background-color: #e5dbff !important;
+  color: #495057 !important;
+  border-radius: 8px !important;
+  border: 1px solid #8d4bf6 !important;
+  box-shadow: 0 2px 8px rgba(141, 75, 246, 0.15) !important;
+}
+
+.screen .selected .text-wrapper-36,
+.screen .selected .text-wrapper-40 {
+  color: #495057 !important;
+}
+
+.screen .selected .overlap-3,
+.screen .selected .overlap-5 {
+  background-color: #e5dbff !important;
+  border-color: #8d4bf6 !important;
+}
+
+/* 예약 페이지 스타일 */
+.screen {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .div {
+  background-color: #ffffff;
+  width: 375px;
+  height: 812px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rectangle {
+  width: 375px;
+  height: 185px;
+  top: 54px;
+  background-color: #ece6e6;
+  position: absolute;
+  left: 0;
+}
+
+.available { 
+  background-color: #fff; 
+  color: #ffffff; 
+  cursor: pointer; 
+}
+
+.full-slot { 
+  background-color: #ffcccc; 
+  color: #aaa; 
+  cursor: not-allowed; 
+}
+
+.clickable { 
+  cursor: pointer; 
+}
+
+.selected {
+  background-color: #f3f0ff !important;
+  color: #495057 !important;
+  border-radius: 8px !important;
+  border: 1px solid #e5dbff !important;
+}
+
+.text-wrapper-day {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: "Pretendard-Medium", Helvetica;
+  color: #585858;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.text-wrapper-day:hover {
+  background-color: rgba(141, 75, 246, 0.1);
+}
+
+.text-wrapper-day.selected {
+  background-color: #8d4bf6;
+  color: white;
+}
+
+.text-wrapper-day.past {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.calendar-header {
+  position: absolute;
+  top: 260px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+.calendar-header .text-wrapper-3 {
+  width: 36px;
+  text-align: center;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-size: 14px;
+  color: #585858;
+}
+
+.calendar-row {
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+/* 인원수 선택 영역 개선 */
+.person-select-container {
+  display: none;
+}
+
+/* 예시 배치 */
+.group-6 { top: 520px; left: 20px; width: 335px; }
+.group-7 { top: 570px; left: 20px; width: 335px; }
+.group-9 { top: 620px; left: 20px; width: 335px; }
+.group-10 { top: 670px; left: 20px; width: 335px; }
+.group-11 { top: 720px; left: 20px; width: 335px; }
+
+/* 하단 네비게이션 스타일(이제 .div 내부에 위치) */
+.nav-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background: #ffffff;
+  border-radius: 0 0 30px 30px;
+  border-top: 1px solid #f0f0f0;
+  z-index: 1000;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  padding: 8px 0;
+}
+
+.nav-item img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  margin-bottom: 4px;
+}
+
+.nav-item img.active,
+.nav-item:hover img {
+  opacity: 1;
+}
+
+.nav-label {
+  margin-top: 4px;
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+}
+
+.nav-item:hover .nav-label {
+  color: #000;
+}
+
+/* 수정: OO.PNG 배경을 적용 */
+.screen .overlap-6 {
+  position: relative;
+  width: 375px;
+  height: 154px;
+  background-image: url(img/ㅇㅇ.png);
+  background-size: cover;
+  background-position: center;
+  left: 0;
+}
+
+/* 수정: text-wrapper 위치 조정 */
+.screen .text-wrapper {
+  position: absolute;
+  top: 210px;
+  left: 142px;
+  font-family: "SF Pro Display", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222222;
+  letter-spacing: -0.3px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+/* 시간 선택 영역 구분선 */
+.time-section-title {
+  position: absolute;
+  top: 460px;
+  left: 0;
+  right: 0;
+  padding: 0 20px 10px;
+  border-bottom: 1px solid #e9ecef;
+  background: #fff;
+  z-index: 2;
+}
+
+.time-section-title h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  font-family: "Pretendard-Medium", Helvetica;
+}
+
+/* 예약 시간 선택 섹션 */
+.reservation-section {
+  position: absolute;
+  top: 480px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  padding: 0 16px;
+}
+
+.section-title {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  font-family: "Pretendard-Medium", Helvetica;
+}
+
+.time-slots-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding-bottom: 16px;
+}
+
+.time-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.time-button:hover {
+  border-color: #8d4bf6;
+  background: #f8f9fa;
+}
+
+.time-button.selected {
+  background: #f3f0ff;
+  border-color: #8d4bf6;
+}
+
+.timeslot-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.status-label {
+  font-size: 11px;
+  color: #666;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .time-slots-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .time-slots-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.test-button-container {
+  position: absolute;
+  top: 490px;  /* 시간 선택 텍스트 아래로 이동 */
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* 4열 그리드 */
+  gap: 8px;
+  background: #ffffff;
+}
+
+.time-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  padding: 4px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.time-button:hover {
+  border-color: #8d4bf6;
+  background: #f8f9fa;
+}
+
+.time-button.selected {
+  background: #f3f0ff;
+  border-color: #8d4bf6;
+}
+
+.timeslot-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1px;
+}
+
+.status-label {
+  font-size: 10px;
+  color: #666;
+}
+
+@media (max-width: 359px) {
+  .test-button-container {
+    grid-template-columns: repeat(3, 1fr);  /* 작은 화면에서는 3열로 */
+    gap: 6px;
+    padding: 8px 12px;
+  }
+}
+
+/* 네비게이션 바 위의 여백 확보 */
+.nav-container {
+  margin-top: 20px;
+}
+
+/* 시간 선택 섹션 */
+.time-select-section {
+  position: absolute;
+  top: 480px;
+  left: 0;
+  right: 0;
+  padding: 0 16px;
+  height: calc(100% - 480px - 85px); /* 상단 여백과 네비게이션 바 높이를 제외한 높이 */
+  display: flex;
+  flex-direction: column;
+}
+
+.time-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+  padding: 10px 0;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.time-box-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 4px 0;
+  overflow-y: auto;
+  max-height: calc(100% - 50px);
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 6px 4px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  word-break: keep-all;
+  white-space: nowrap;
+  position: relative;
+}
+
+.time-box .time {
+  font-size: 11px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  margin-bottom: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.time-box .status {
+  font-size: 9px;
+  color: #666;
+  margin-top: 1px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* 시간 박스 내부 요소들의 가시성 강화 */
+.time-box .time,
+.time-box .status {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* 시간 박스 호버 효과 */
+.time-box:hover {
+  border-color: #8d4bf6;
+  background: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* 선택된 시간 박스 */
+.time-box.selected {
+  background: #f3f0ff;
+  border-color: #8d4bf6;
+  box-shadow: 0 2px 5px rgba(141,75,246,0.1);
+}
+
+/* 시간 박스 내부 텍스트 강조 */
+.time-box.selected .time {
+  color: #8d4bf6;
+  font-weight: 600;
+}
+
+.time-box.selected .status {
+  color: #8d4bf6;
+}
+
+/* 스크롤바 스타일링 */
+.time-box-wrap::-webkit-scrollbar {
+  width: 6px;
+}
+
+.time-box-wrap::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.time-box-wrap::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.time-box-wrap::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* 예약 가능한 시간대 */
+.time-box.available {
+  cursor: pointer;
+}
+
+.time-box.available:hover {
+  border-color: #8d4bf6;
+  background: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* 예약 불가능한 시간대 */
+.time-box.full {
+  cursor: not-allowed;
+  background: #f5f5f5;
+  border-color: #ddd;
+  opacity: 0.7;
+}
+
+.time-box.full .time,
+.time-box.full .status {
+  color: #999;
+}
+
+/* 대기 가능한 시간대 */
+.time-box.waiting {
+  cursor: pointer;
+  background: #fff3e0;
+  border-color: #ffb74d;
+}
+
+.time-box.waiting .time {
+  color: #f57c00;
+}
+
+.time-box.waiting .status {
+  color: #f57c00;
+}
+
+.time-box.waiting:hover {
+  background: #ffe0b2;
+  border-color: #ff9800;
+}
+
+/* 예약 버튼 스타일 */
+#reservationButton {
+  width: 100%;
+  padding: 12px;
+  background: #8d4bf6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+}
+
+#reservationButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#reservationButton:not(:disabled):hover {
+  background: #7a3dd4;
+  box-shadow: 0 2px 5px rgba(141,75,246,0.2);
+}

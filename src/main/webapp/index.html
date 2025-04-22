@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Index Page with Overlaid Search</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/styleguide.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="div-wrapper">
+      <div class="div">
+        <!-- 사이드 보라색 배경바 -->
+        <button onclick="location.href='hairshop.html'" style="all:unset; cursor:pointer;">
+          <div class="overlap">
+            <img class="image" src="img/Group 568.png" alt="헤어샵 이동" />
+          </div>
+        </button>
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="overlap-group">
+            <img class="img" src="img/Frame 144.png" alt="예비 페이지 이동" />
+          </div>
+        </button>
+        <!-- 상단 알림/북마크 -->
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="image-wrapper">
+            <img class="image-2" src="img/Frame 143.png" alt="알림" />
+          </div>
+        </button>
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="img-wrapper">
+            <img class="image-3" src="img/Frame 142.png" alt="북마크" />
+          </div>
+        </button>
+        <!-- 메인 배너 -->
+        <div class="overlap-2">
+          <div class="overlap-3">
+            <div class="main-banner-bg"></div>
+            <img class="element" src="img/dd.png" alt="메인 배너" />
+            <p class="text-wrapper">
+              급한데 미리 예약 못했다면?<br />당장 이용 가능한 샵 찾기
+            </p>
+          </div>
+          <div class="text-wrapper-2">첫방문 최대 50% 할인</div>
+        </div>
+        <!-- 상단 상태바 -->
+        <div class="status-bars">
+          <div class="statusbar-ios">
+            <div class="left-side">
+              <div class="statusbars-time">
+                <div class="time">9:41</div>
+              </div>
+            </div>
+            <div class="right-side">
+              <img class="icon-mobile-signal" src="img/ㅊㅊㅊㅍㅍ.png" alt="신호" />
+              <img class="wifi" src="img/ㅊㅊㅊㅊ.png" alt="와이파이" />
+              <div class="statusbar-battery">
+                <div class="overlap-group-2">
+                  <img class="outline" src="img/ㅊㅌ.png" alt="배터리 외곽" />
+                  <div class="percentage"></div>
+                </div>
+                <img class="battery-end" src="img/battery-end.svg" alt="배터리 끝" />
+              </div>
+            </div>
+          </div>
+          <div class="dynamic-island"></div>
+        </div>
+        
+        <!-- 검색바 이미지 (디자인용) -->
+        <img class="frame" src="img/EE.png" alt="검색 바" />
+        <!-- 검색폼: 검색어 입력 후 mame.jsp로 전달 -->
+        <form class="search-form" action="search.jsp" method="get">
+          <input type="text" name="query" placeholder="매장 검색..." />
+        </form>
+        
+        <div class="rectangle"></div>
+        <!-- 카테고리 텍스트 -->
+        <div class="text-wrapper-3">눈썹&amp;속눈썹</div>
+        <div class="text-wrapper-4">타임세일</div>
+        <div class="text-wrapper-5">쿠폰/ 혜택</div>
+        <div class="text-wrapper-6">바버샵</div>
+        <div class="text-wrapper-7">이달의 트렌드</div>
+        <div class="text-wrapper-8">에스테틱</div>
+        <!-- 메인 썸네일 2개 -->
+        <div class="overlap-4">
+          <img class="image-4" src="img/image.png" alt="썸네일1" />
+          <img class="image-5" src="img/image2.png" alt="썸네일2" />
+          <div class="rectangle-2"></div>
+       
+          <!-- 하단 네비게이션 -->
+          <div class="group">
+            <img class="vector" src="img/ㅅ.png" alt="네비게이션 아이콘" />
+            <button id="myButton" class="vector-2-btn" style="all: unset; cursor: pointer;">
+              <img src="img/my.png" class="vector-2" alt="마이페이지 이동" />
+            </button>
+            <script>
+              document.getElementById('myButton').addEventListener('click', function () {
+                const isLoggedIn = localStorage.getItem('isLoggedIn');
+                if (isLoggedIn === 'true') {
+                  window.location.href = 'mypage.jsp';
+                } else {
+                  window.location.href = 'login.html';
+                }
+              });
+            </script>
+            <script>
+              window.onload = function () {
+                const isLoggedIn = localStorage.getItem("isLoggedIn");
+                if (isLoggedIn !== "true") {
+                  console.log("비로그인 상태입니다");
+                } else {
+                  console.log("로그인됨: ", localStorage.getItem("userName"));
+                }
+              };
+            </script>
+            <button onclick="location.href='myrev.jsp'" style="all:unset; cursor:pointer;">
+              <img class="vector-3" src="img/rev.png" alt="리뷰 페이지 이동" />
+            </button>
+            <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+              <img class="vector-4" src="img/cxxc.png" alt="기타 페이지 이동" />
+            </button>
+            <button onclick="location.href='map.html'" style="all:unset; cursor:pointer;">
+              <img class="vector-5" src="img/map.png" alt="지도 페이지 이동" />
+            </button>
+            <div class="text-wrapper-9">홈</div>
+            <div class="text-wrapper-10">피드</div>
+            <div class="text-wrapper-11">내주변</div>
+            <div class="text-wrapper-12">예약</div>
+            <div class="text-wrapper-13">마이</div>
+          </div>
+        </div>
+        <!-- 상단 카테고리 텍스트 -->
+        <div class="text-wrapper-14">헤어샵</div>
+        <div class="text-wrapper-15">네일샵</div>
+        <div class="text-wrapper-16">왁싱</div>
+        <div class="text-wrapper-17">당일 예약</div>
+        <!-- 위치 핀 -->
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="group-2">
+            <img class="image-6" src="img/Frame 138.png" alt="위치 핀" />
+          </div>
+        </button>
+        <!-- 검색/전국영역 -->
+        <img class="vector-6" src="img/RR.png" alt="검색 아이콘" />
+        <img class="vector-7" src="img/Vector.png" alt="벡터 아이콘" />
+        <!-- 위치선택 + 검색 돋보기 -->
+        <div class="group-3">
+          <div class="text-wrapper-21">전국</div>
+
+          <img class="vector-8" src="img/ㅇ.png" alt="벡터 아이콘" />
+        </div>
+        <!-- 아이콘 이미지들 -->
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="group-4">
+            <img class="image-7" src="img/Frame 139.png" alt="아이콘1" />
+          </div>
+        </button>
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="overlap-9">
+            <img class="image-8" src="img/Frame 140.png" alt="아이콘2" />
+          </div>
+        </button>
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="group-5">
+            <img class="image-9" src="img/image-47.png" alt="아이콘3" />
+          </div>
+        </button>
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="group-6">
+            <img class="image-8" src="img/Frame 134.png" alt="아이콘4" />
+          </div>
+        </button>
+        <button onclick="location.href='prepare.html'" style="all:unset; cursor:pointer;">
+          <div class="overlap-10">
+            <img class="image-10" src="img/Frame 141.png" alt="아이콘5" />
+          </div>
+        </button>
+        <!-- 상단 메뉴 탭 -->
+        <div class="group-7">
+          <div class="text-wrapper-22">헤어샵</div>
+          <div class="text-wrapper-23">음식점</div>
+        </div>
+        <!-- 시술별 필터 -->
+        <div class="text-wrapper-18">시술별 재예약 많은 샵</div>
+        <div class="overlap-5">
+          <div class="rectangle-4"></div>
+          <div class="text-wrapper-19">커트</div>
+        </div>
+        <div class="overlap-6">
+          <div class="rectangle-4"></div>
+          <div class="text-wrapper-20">펌</div>
+        </div>
+        <div class="overlap-7">
+          <div class="rectangle-4"></div>
+          <div class="text-wrapper-19">염색</div>
+        </div>
+        <div class="overlap-8">
+          <div class="rectangle-4"></div>
+          <div class="text-wrapper-19">네일</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

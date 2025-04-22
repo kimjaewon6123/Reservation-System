@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>나의 예약</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/styleguide.css" />
+  <link rel="stylesheet" href="css/myrevstyle.css" />
+  <style>
+    .group {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-top: 1px solid #f0f0f0;
+      border-radius: 0 0 30px 30px;
+      z-index: 1000;
+    }
+
+    .group-2 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 80px;
+    }
+
+    .group-2 img {
+      width: 24px;
+      height: 24px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .group-2 img.active,
+    .group-2 img:hover {
+      opacity: 1;
+    }
+
+    .text-label {
+      font-size: 10px;
+      color: #666;
+      text-align: center;
+      margin-top: 4px;
+    }
+  </style>
+  <script>
+    // 로그인 여부 확인
+    (function(){
+      const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+      if (!isLoggedIn) {
+        alert('로그인이 필요합니다.');
+        window.location.href = 'login.html';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="screen">
+    <div class="div">
+      <div class="status-bars">
+        <div class="statusbar-ios">
+          <div class="left-side">
+            <div class="statusbars-time"><div class="time">9:41</div></div>
+          </div>
+          <div class="right-side">
+            <img class="icon-mobile-signal" src="img/ㅊㅊㅊㅍㅍ.png" alt="신호" />
+            <img class="wifi"              src="img/ㅊㅊㅊㅊ.png" alt="와이파이" />
+            <div class="statusbar-battery">
+              <div class="overlap-group">
+                <img class="outline" src="img/ㅊㅌ.png" alt="배터리 외곽" />
+                <div class="percentage"></div>
+              </div>
+              <img class="battery-end" src="img/battery-end.svg" alt="배터리 끝" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-wrapper">예약 현황</div>
+      <img class="vector" src="img/ㅍ.png" alt="아이콘" />
+      <div class="text-wrapper-2">나의 예약</div>
+      <div class="text-wrapper-3">대기 예약</div>
+
+      <div class="group">
+        <div class="group-2">
+          <!-- 홈 -->
+          <img
+            src="img/home.png"
+            alt="홈"
+            style="cursor:pointer"
+            onclick="window.location.href='index.jsp'"
+          />
+
+          <!-- 피드 -->
+          <img
+            src="img/feed.png"
+            alt="피드"
+            style="cursor:pointer"
+            onclick="window.location.href='feed.jsp'"
+          />
+
+          <!-- 예약 (현재 페이지) -->
+          <img
+            src="img/rev.png"
+            alt="예약"
+            style="cursor:pointer"
+            onclick="window.location.href='myrev.jsp'"
+          />
+
+          <!-- 내주변 -->
+          <img
+            src="img/map.png"
+            alt="내주변"
+            style="cursor:pointer"
+            onclick="window.location.href='map.jsp'"
+          />
+
+          <!-- 마이 -->
+          <img
+            src="img/my.png"
+            alt="마이"
+            style="cursor:pointer"
+            onclick="window.location.href='mypage.jsp'"
+          />
+
+          <div class="text-wrapper-4">홈</div>
+          <div class="text-wrapper-5">피드</div>
+          <div class="text-wrapper-6">예약</div>
+          <div class="text-wrapper-7">내주변</div>
+          <div class="text-wrapper-8">마이</div>
+        </div>
+      </div>
+
+      <img class="line" src="img/ㅇㅇㅇㅇㅇㅇ.png" alt="구분선" />
+
+      <!-- 하단 네비게이션 (feed 페이지에서 가져온 부분) -->
+      <div class="group">
+        <div class="group-2">
+          <div onclick="location.href='index.jsp'">
+            <img src="img/home.png" alt="홈" />
+            <div class="text-label">홈</div>
+          </div>
+          <div onclick="location.href='feed.jsp'">
+            <img src="img/cxxc.png" alt="피드" class="active" />
+            <div class="text-label">피드</div>
+          </div>
+          <div onclick="location.href='map.html'">
+            <img src="img/map.png" alt="내주변" />
+            <div class="text-label">내주변</div>
+          </div>
+          <div onclick="location.href='myrev.jsp'">
+            <img src="img/rev.png" alt="예약" />
+            <div class="text-label">예약</div>
+          </div>
+          <div onclick="location.href='mypage.jsp'">
+            <img src="img/my.png" alt="마이" />
+            <div class="text-label">마이</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/styleguide.css" />
+    <link rel="stylesheet" href="css/loginstyle.css" />
+     <style>
+    .back-arrow {
+      position: absolute;
+      top: 75px;
+      left: 30px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .back-arrow:hover {
+      transform: translateX(-5px);
+    }
+  </style>
+</head>
+  <body>
+    <div class="screen">
+      <div class="div">
+        <div class="overlap">
+          <div class="ellipse"></div>
+          <div class="ellipse-2"></div>
+          <div class="text-wrapper">당일 캔슬 예약 시스템</div>
+          <div class="text-wrapper-2">기다림없는 편안한 예약</div>
+        </div>
+
+        <div class="status-bars">
+          <div class="statusbar-ios">
+            <div class="left-side">
+              <div class="statusbars-time"><div class="time">9:41</div></div>
+            </div>
+            <div class="right-side">
+              <img class="icon-mobile-signal" src="img/ㅊㅊㅊㅍㅍ.png" />
+              <img class="wifi" src="img/ㅊㅊㅊㅊ.png" />
+              <div class="statusbar-battery">
+                <div class="overlap-group">
+                  <img class="outline" src="img/ㅊㅌ.png" />
+                  <div class="percentage"></div>
+                </div>
+                <img class="battery-end" src="img/battery-end.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img src="img/yy.png" alt="뒤로가기" class="back-arrow" onclick="window.location.href='index.jsp'" />
+        <div class="text-wrapper-3">Login</div>
+
+        <form id="loginForm" action="logincheck.jsp" method="post" onsubmit="return validateForm()">
+          <div class="input-group">
+            <input type="text" name="userId" id="userId" placeholder="아이디를 입력하세요" class="rectangle" required />
+            <div class="error-message" id="userIdError"></div>
+          </div>
+          <div class="input-group">
+            <input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요" class="rectangle-2" required />
+            <div class="error-message" id="userPwError"></div>
+          </div>
+          <button type="submit" class="div-wrapper">
+            <div class="text-wrapper-4">로그인</div>
+            <div class="loading-spinner" id="loadingSpinner"></div>
+          </button>
+        </form>
+
+        <div class="text-wrapper-5" onclick="showForgotPassword()">비밀번호 찾기</div>
+        <div class="text-wrapper-6" onclick="window.location.href='join.html'">
+          회원가입
+        </div>
+
+        <div class="group">
+          <div class="text-wrapper-7">SNS 로그인</div>
+          <img class="line" src="img/Line 5.png" />
+          <img class="img" src="img/Line 5.png" />
+        </div>
+
+        <div class="group-2">
+          <img class="kakao-talk" src="img/77.png" onclick="kakaoLogin()" />
+          <img class="image" src="img/image 82.png" onclick="naverLogin()" />
+          <img class="image-2" src="img/10.png" onclick="googleLogin()" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function validateForm() {
+        const userId = document.getElementById('userId').value;
+        const userPw = document.getElementById('userPw').value;
+        let isValid = true;
+
+        // 아이디 검증
+        if (userId.length < 4) {
+          showError('userIdError', '아이디는 4자 이상이어야 합니다.');
+          isValid = false;
+        } else {
+          hideError('userIdError');
+        }
+
+        // 비밀번호 검증
+        if (userPw.length < 6) {
+          showError('userPwError', '비밀번호는 6자 이상이어야 합니다.');
+          isValid = false;
+        } else {
+          hideError('userPwError');
+        }
+
+        if (isValid) {
+          showLoading();
+        }
+
+        return isValid;
+      }
+
+      function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+      }
+
+      function hideError(elementId) {
+        document.getElementById(elementId).style.display = 'none';
+      }
+
+      function showLoading() {
+        document.getElementById('loadingSpinner').style.display = 'block';
+      }
+
+      function showForgotPassword() {
+        // 비밀번호 찾기 기능 구현
+        alert('비밀번호 찾기 기능은 준비 중입니다.');
+      }
+
+      // SNS 로그인 함수들
+      function kakaoLogin() {
+        alert('카카오 로그인 준비 중입니다.');
+      }
+
+      function naverLogin() {
+        alert('네이버 로그인 준비 중입니다.');
+      }
+
+      function googleLogin() {
+        alert('구글 로그인 준비 중입니다.');
+      }
+
+      // 실시간 입력 검증
+      document.getElementById('userId').addEventListener('input', function() {
+        if (this.value.length >= 4) {
+          hideError('userIdError');
+        }
+      });
+
+      document.getElementById('userPw').addEventListener('input', function() {
+        if (this.value.length >= 6) {
+          hideError('userPwError');
+        }
+      });
+    </script>
+  </body>
+</html>

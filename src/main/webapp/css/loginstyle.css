@@ -1,0 +1,800 @@
+.screen {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 375px;
+  height: 812px;
+  position: relative;
+}
+
+.screen .overlap {
+  position: absolute;
+  width: 299px;
+  height: 123px;
+  top: 136px;
+  left: 37px;
+}
+
+.screen .ellipse {
+  width: 73px;
+  height: 72px;
+  top: 51px;
+  left: 0;
+  background-color: #d6bcfa4c;
+  border-radius: 36.5px/36px;
+  position: absolute;
+  filter: blur(5px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.screen .ellipse-2 {
+  width: 88px;
+  height: 87px;
+  top: 0;
+  left: 211px;
+  background-color: #fed7e2b2;
+  border-radius: 44px/43.5px;
+  position: absolute;
+  filter: blur(5px);
+  animation: float 6s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.screen .text-wrapper {
+  top: 50px;
+  left: 23px;
+  font-family: "Pretendard-Bold", Helvetica;
+  font-weight: 700;
+  color: #8d4bf6;
+  font-size: 30px;
+  line-height: 50px;
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 0;
+}
+
+.screen .text-wrapper-2 {
+  top: 26px;
+  left: 59px;
+  font-family: "Pretendard-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #757575;
+  font-size: 20px;
+  line-height: normal;
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 0;
+}
+
+.screen .status-bars {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 3px 0px 0px;
+  position: absolute;
+  top: 0;
+  left: -7px;
+}
+
+.screen .statusbar-ios {
+  position: relative;
+  width: 390px;
+  height: 47px;
+}
+
+.screen .left-side {
+  position: absolute;
+  width: 54px;
+  height: 21px;
+  top: 14px;
+  left: 27px;
+}
+
+.screen .statusbars-time {
+  position: relative;
+  height: 21px;
+  border-radius: 24px;
+}
+
+.screen .time {
+  position: absolute;
+  width: 54px;
+  top: 1px;
+  left: 0;
+  font-family: var(--body-bold-font-family);
+  font-weight: var(--body-bold-font-weight);
+  color: var(--label-colorlightprimary);
+  font-size: var(--body-bold-font-size);
+  text-align: center;
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  white-space: nowrap;
+  font-style: var(--body-bold-font-style);
+}
+
+.screen .right-side {
+  position: absolute;
+  width: 78px;
+  height: 13px;
+  top: 19px;
+  left: 286px;
+}
+
+.screen .icon-mobile-signal {
+  position: absolute;
+  width: 18px;
+  height: 12px;
+  top: 0;
+  left: 0;
+}
+
+.screen .wifi {
+  position: absolute;
+  width: 17px;
+  height: 12px;
+  top: 0;
+  left: 26px;
+}
+
+.screen .statusbar-battery {
+  position: absolute;
+  width: 27px;
+  height: 13px;
+  top: 0;
+  left: 51px;
+}
+
+.screen .overlap-group {
+  position: absolute;
+  width: 25px;
+  height: 14px;
+  top: -1px;
+  left: 0;
+}
+
+.screen .outline {
+  position: absolute;
+  width: 25px;
+  height: 13px;
+  top: 1px;
+  left: 0;
+}
+
+.screen .percentage {
+  position: absolute;
+  height: 13px;
+  top: 0;
+  left: 6px;
+  font-family: "SF Pro Text-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--label-colordarkprimary);
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0.06px;
+  line-height: 13px;
+  white-space: nowrap;
+}
+
+.screen .battery-end {
+  position: absolute;
+  width: 1px;
+  height: 4px;
+  top: 5px;
+  left: 26px;
+}
+
+.screen .text-wrapper-3 {
+  position: absolute;
+  top: 289px;
+  left: 155px;
+  font-family: "Pretendard-Bold", Helvetica;
+  font-weight: 700;
+  color: #8d4bf6;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .rectangle {
+  top: 341px;
+  position: absolute;
+  width: 274px;
+  height: 50px;
+  left: 51px;
+  border-radius: 15px;
+  border: 1px solid;
+  border-color: #808080;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background-color: #f5f5f5;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.screen .rectangle-2 {
+  top: 412px;
+  position: absolute;
+  width: 274px;
+  height: 50px;
+  left: 51px;
+  border-radius: 15px;
+  border: 1px solid;
+  border-color: #808080;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background-color: #f5f5f5;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.screen .div-wrapper {
+  position: absolute;
+  width: 274px;
+  height: 50px;
+  top: 526px;
+  left: 51px;
+  background-color: #8d4bf6;
+  border-radius: 26px;
+
+  display: flex;               /* ✅ Flexbox 적용 */
+  align-items: center;         /* ✅ 수직 중앙 정렬 */
+  justify-content: center;     /* ✅ 수평 중앙 정렬 */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+.screen .div-wrapper:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+.screen .text-wrapper-4 {
+  position: static;            /* ✅ absolute 제거 */
+  font-family: "Pretendard-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+.screen .text-wrapper-5 {
+  width: 93px;
+  top: 485px;
+  left: 224px;
+  font-family: "Pretendard-Regular", Helvetica;
+  font-weight: 400;
+  color: #8d4bf6;
+  font-size: 14px;
+  text-align: right;
+  line-height: normal;
+  position: absolute;
+  letter-spacing: 0;
+}
+
+.screen .text-wrapper-6 {
+  width: 88px;
+  top: 485px;
+  left: 59px;
+  font-family: "Pretendard-Regular", Helvetica;
+  font-weight: 400;
+  color: #8d4bf6;
+  font-size: 16px;
+  line-height: normal;
+  position: absolute;
+  letter-spacing: 0;
+}
+
+.screen .group {
+  position: absolute;
+  width: 322px;
+  height: 20px;
+  top: 626px;
+  left: 28px;
+}
+
+.screen .text-wrapper-7 {
+  position: absolute;
+  top: 0;
+  left: 119px;
+  font-family: "Pretendard-Regular", Helvetica;
+  font-weight: 400;
+  color: #808080;
+  font-size: 17px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .line {
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 1px;
+  top: 9px;
+  object-fit: cover;
+}
+
+.screen .img {
+  left: 210px;
+  position: absolute;
+  width: 110px;
+  height: 1px;
+  top: 9px;
+  object-fit: cover;
+}
+
+.screen .group-2 {
+  position: absolute;
+  width: 221px;
+  height: 52px;
+  top: 696px;
+  left: 77px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.screen .kakao-talk {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.screen .image {
+  width: 51px;
+  height: 51px;
+  left: 85px;
+  position: absolute;
+  top: 0;
+}
+
+.screen .image-2 {
+  width: 52px;
+  height: 52px;
+  left: 169px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+}
+
+/* 입력 필드 포커스 효과 */
+.rectangle,
+.rectangle-2 {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background-color: #f5f5f5;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.rectangle:focus,
+.rectangle-2:focus {
+  border-color: #8d4bf6;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(141, 75, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.rectangle::placeholder,
+.rectangle-2::placeholder {
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.rectangle:focus::placeholder,
+.rectangle-2:focus::placeholder {
+  opacity: 0.7;
+  transform: translateX(5px);
+}
+
+/* 로그인 버튼 호버 효과 */
+.div-wrapper {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+.div-wrapper:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+.div-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(141, 75, 246, 0.3);
+}
+
+.div-wrapper:hover:before {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+.div-wrapper:active {
+  transform: translateY(1px);
+}
+
+/* SNS 로그인 버튼 효과 */
+.group-2 img {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  filter: grayscale(0.2);
+}
+
+.group-2 img:hover {
+  transform: scale(1.15) rotate(5deg);
+  filter: grayscale(0);
+}
+
+/* 회원가입, 비밀번호 찾기 링크 효과 */
+.text-wrapper-5,
+.text-wrapper-6 {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.text-wrapper-5:hover,
+.text-wrapper-6:hover {
+  color: #8d4bf6;
+  transform: translateY(-1px);
+}
+
+.text-wrapper-5::after,
+.text-wrapper-6::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #8d4bf6;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.text-wrapper-5:hover::after,
+.text-wrapper-6:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* 페이지 로드 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-wrapper,
+.text-wrapper-2,
+.text-wrapper-3,
+form,
+.group,
+.group-2 {
+  animation: fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+.text-wrapper { animation-delay: 0.2s; }
+.text-wrapper-2 { animation-delay: 0.4s; }
+.text-wrapper-3 { animation-delay: 0.6s; }
+form { animation-delay: 0.8s; }
+.group { animation-delay: 1s; }
+.group-2 { animation-delay: 1.2s; }
+
+/* 에러 메시지 스타일 */
+.error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 5px;
+  animation: fadeInUp 0.3s ease;
+  display: none;
+  padding-left: 15px;
+}
+
+/* 로딩 스피너 */
+.loading-spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* 상단 배너 효과 */
+.ellipse,
+.ellipse-2 {
+  animation: float 6s ease-in-out infinite;
+}
+
+.ellipse-2 {
+  animation-delay: -3s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* 반응형 호버 효과 */
+@media (hover: hover) {
+  .div-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(141, 75, 246, 0.3);
+  }
+  
+  .group-2 img:hover {
+    transform: scale(1.15) rotate(5deg);
+  }
+  
+  .text-wrapper-5:hover,
+  .text-wrapper-6:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* 로그인 페이지 특정 스타일 */
+.login-container {
+  padding: 24px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-title {
+  font-family: "Pretendard-Bold", Helvetica;
+  font-size: 30px;
+  color: #8d4bf6;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.login-subtitle {
+  font-family: "Pretendard-SemiBold", Helvetica;
+  font-size: 20px;
+  color: #757575;
+  margin-bottom: 32px;
+  animation: fadeInUp 0.8s ease-out 0.2s;
+}
+
+/* 배경 장식 요소 */
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(5px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.decoration-circle.purple {
+  width: 73px;
+  height: 72px;
+  top: 51px;
+  left: 0;
+  background-color: #d6bcfa4c;
+}
+
+.decoration-circle.pink {
+  width: 88px;
+  height: 87px;
+  top: 0;
+  right: 20px;
+  background-color: #fed7e2b2;
+  animation-delay: -3s;
+}
+
+/* 입력 폼 */
+.form-group {
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease-out 0.4s;
+}
+
+.form-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: "Pretendard-Regular", Helvetica;
+  font-size: 16px;
+  color: #333333;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #8d4bf6;
+  box-shadow: 0 0 0 2px rgba(141, 75, 246, 0.1);
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: #999999;
+}
+
+.form-input.error {
+  border-color: #ff4d4f;
+}
+
+/* 로그인 버튼 */
+.login-button {
+  width: 100%;
+  height: 56px;
+  background-color: #8d4bf6;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: "Pretendard-Bold", Helvetica;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.6s;
+}
+
+.login-button:hover {
+  background-color: #7b3fd9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(141, 75, 246, 0.2);
+}
+
+.login-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* 소셜 로그인 */
+.social-login {
+  margin-top: 32px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out 0.8s;
+}
+
+.social-login-text {
+  font-family: "Pretendard-Medium", Helvetica;
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 16px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-button img {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.social-button:hover img {
+  filter: grayscale(0%);
+}
+
+/* 회원가입 링크 */
+.signup-link {
+  display: inline-block;
+  color: #8d4bf6;
+  text-decoration: none;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-size: 14px;
+  margin-top: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.signup-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #8d4bf6;
+  transition: width 0.3s ease;
+}
+
+.signup-link:hover::after {
+  width: 100%;
+}
+
+/* 에러 메시지 */
+.error-message {
+  display: none;
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.error-message.visible {
+  display: block;
+}

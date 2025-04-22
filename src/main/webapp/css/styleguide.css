@@ -1,0 +1,14 @@
+@charset "UTF-8";
+:root {
+  --label-colorlightprimary: rgba(0, 0, 0, 1);
+  --label-colordarkprimary: rgba(255, 255, 255, 1);
+  --system-backgrounddark-baseprimary: rgba(0, 0, 0, 1);
+  --body-bold-font-family: "SF Pro Text", Helvetica;
+  --body-bold-font-weight: 400;
+  --body-bold-font-size: 17px;
+  --body-bold-letter-spacing: -0.40799999237060547px;
+  --body-bold-line-height: 22px;
+  --body-bold-font-style: normal;
+}
+
+

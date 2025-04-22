@@ -1,0 +1,304 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .screen {
+            height: 100%;
+            position: relative;
+        }
+
+        .div {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 375px;
+            height: 812px;
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .join-header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .join-header h1 {
+            font-family: "Pretendard-ExtraBold", Helvetica;
+            font-weight: 800;
+            color: #8d4bf6;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .join-form {
+            padding: 20px;
+            overflow-y: auto;
+            max-height: calc(812px - 200px);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: "Pretendard-Medium", Helvetica;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: calc(100% - 30px);
+            padding: 10px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #8d4bf6;
+            outline: none;
+        }
+
+        .join-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #8d4bf6;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: "Pretendard-SemiBold", Helvetica;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .join-button:hover {
+            background-color: #7a3dd4;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #8d4bf6;
+            text-decoration: none;
+            font-family: "Pretendard-Medium", Helvetica;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .back-button img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* 하단 네비게이션 */
+        .group {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 1px solid #f0f0f0;
+            border-radius: 0 0 30px 30px;
+            z-index: 1000;
+        }
+
+        .group-2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+        }
+
+        .group-2 img {
+            width: 24px;
+            height: 24px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .group-2 img.active,
+        .group-2 img:hover {
+            opacity: 1;
+        }
+
+        .text-label {
+            font-size: 10px;
+            color: #666;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .checkbox-group {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .checkbox-item label {
+            font-size: 12px;
+            color: #666;
+            margin: 0;
+        }
+
+        .terms-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <div class="div">
+            <button class="back-button" onclick="history.back()">
+                <img src="img/back.png" alt="뒤로가기">
+            </button>
+            <div class="join-header">
+                <h1>회원가입</h1>
+            </div>
+            <form class="join-form" action="joinProcess.jsp" method="post" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="username">아이디</label>
+                    <input type="text" id="username" name="username" placeholder="아이디를 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-confirm">비밀번호 확인</label>
+                    <input type="password" id="password-confirm" name="password-confirm" placeholder="비밀번호를 다시 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">전화번호</label>
+                    <input type="tel" id="phone" name="phone" placeholder="전화번호를 입력하세요" required>
+                </div>
+                
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="agree1" name="agree1" required>
+                        <label for="agree1">개인정보 처리방침에 동의합니다</label>
+                    </div>
+                    <div class="terms-text">
+                        본인은 개인정보 수집 및 이용에 동의합니다. 수집된 개인정보는 회원가입 및 서비스 이용을 위해 사용됩니다.
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="agree2" name="agree2" required>
+                        <label for="agree2">이용약관에 동의합니다</label>
+                    </div>
+                    <div class="terms-text">
+                        본인은 서비스 이용약관에 동의합니다. 약관을 준수하지 않을 경우 서비스 이용이 제한될 수 있습니다.
+                    </div>
+                </div>
+                
+                <button type="submit" class="join-button">가입하기</button>
+                <div class="login-link">
+                    <a href="login.html">이미 계정이 있으신가요? 로그인하기</a>
+                </div>
+            </form>
+
+            <!-- 하단 네비게이션 -->
+            <div class="group">
+                <div class="group-2">
+                    <div onclick="location.href='index.jsp'">
+                        <img src="img/home.png" alt="홈" />
+                        <div class="text-label">홈</div>
+                    </div>
+                    <div onclick="location.href='feed.jsp'">
+                        <img src="img/cxxc.png" alt="피드" />
+                        <div class="text-label">피드</div>
+                    </div>
+                    <div onclick="location.href='map.html'">
+                        <img src="img/map.png" alt="내주변" />
+                        <div class="text-label">내주변</div>
+                    </div>
+                    <div onclick="location.href='myrev.jsp'">
+                        <img src="img/rev.png" alt="예약" />
+                        <div class="text-label">예약</div>
+                    </div>
+                    <div onclick="location.href='mypage.jsp'">
+                        <img src="img/my.png" alt="마이" />
+                        <div class="text-label">마이</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function validateForm() {
+        const agree1 = document.getElementById('agree1').checked;
+        const agree2 = document.getElementById('agree2').checked;
+        const password = document.getElementById('password').value;
+        const passwordConfirm = document.getElementById('password-confirm').value;
+        
+        if (!agree1 || !agree2) {
+            alert('모든 약관에 동의해야 회원가입이 가능합니다.');
+            return false;
+        }
+        
+        if (password !== passwordConfirm) {
+            alert('비밀번호가 일치하지 않습니다.');
+            return false;
+        }
+        
+        return true;
+    }
+    </script>
+</body>
+</html>
