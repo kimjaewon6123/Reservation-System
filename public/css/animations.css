@@ -1,0 +1,217 @@
+/* 로딩 애니메이션 */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s, visibility 0.8s;
+}
+
+.loading-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #8B00FF;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 메인 배너 페이드인 */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 페이지 전환 효과 */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9998;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.page-transition.active {
+  transform: scaleY(1);
+}
+
+/* 위에서 아래로 슬라이드 */
+.slide-down {
+  opacity: 0;
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 아래에서 위로 슬라이드 */
+.slide-up {
+  opacity: 0;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 좌우 슬라이드 */
+.slide-left {
+  opacity: 0;
+  animation: slideLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-right {
+  opacity: 0;
+  animation: slideRight 0.8s ease-out forwards;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 스케일 효과 */
+.scale-in {
+  opacity: 0;
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 버튼 호버 효과 */
+.button-hover {
+  transition: all 0.3s ease;
+}
+
+.button-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 카드 호버 효과 */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 반응형 디자인 보완 */
+@media (max-width: 768px) {
+  .search-form input {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+  }
+  
+  .bottom-nav {
+    padding: 10px 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-form input {
+    font-size: 14px;
+  }
+  
+  .text-wrapper {
+    font-size: 90%;
+  }
+}
+
+/* 상단 상태바 고정 */
+.status-bars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+}
+
+
+
+/* 시술별 섹션 고정 */
+.text-wrapper-18 {
+  position: sticky;
+  top: 60px;
+  background-color: white;
+  z-index: 900;
+  padding: 10px 0;
+}
+
+/* 컨텐츠 여백 조정 */
+.div-wrapper {
+  padding-top: 60px;  /* 상단바 높이만큼 여백 */
+  padding-bottom: 70px;  /* 하단 네비게이션 높이만큼 여백 */
+} 

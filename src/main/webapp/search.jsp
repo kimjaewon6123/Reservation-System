@@ -1,5 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, java.net.URLEncoder" %>
+<%@ page import="util.DBConnection" %>
+<%@ page import="java.util.*" %>
+<%@ page import="org.json.simple.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -285,66 +288,54 @@
         <div class="content-area">
           <h1>검색 결과</h1>
           <%
-            String query = request.getParameter("query");
-            if(query == null || query.trim().isEmpty()){
-          %>
-              <div class="no-results">
-                <img src="images/search-empty.svg" alt="검색어 없음" />
-                <p>검색어를 입력해주세요</p>
-              </div>
-          <%
-            } else {
-              Connection conn = null;
-              PreparedStatement pstmt = null;
-              ResultSet rs = null;
-              try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scrs", "root", "mysql123");
-                String sql = "SELECT store_name, store_category, store_address, store_phone, store_hours FROM store WHERE store_name LIKE ?";
-                pstmt = conn.prepareStatement(sql);
-                pstmt.setString(1, "%" + query + "%");
-                rs = pstmt.executeQuery();
-                boolean found = false;
-                while(rs.next()){
-                  found = true;
-                  String name = rs.getString("store_name");
-                  String category = rs.getString("store_category");
-                  String address = rs.getString("store_address");
-                  String phone = rs.getString("store_phone");
-                  String hours = rs.getString("store_hours");
-                  String encoded = URLEncoder.encode(name, "UTF-8");
-          %>
-                  <a href="service.jsp?storeName=<%= encoded %>" class="store-link">
-                    <div class="store-result">
-                      <h2><%= name %></h2>
-                      <p>카테고리: <%= category %></p>
-                      <p>주소: <%= address %></p>
-                      <p>전화번호: <%= phone %></p>
-                      <p>영업시간: <%= hours %></p>
-                    </div>
-                  </a>
-          <%
+            request.setCharacterEncoding("UTF-8");
+            String searchQuery = request.getParameter("query");
+            
+            if (searchQuery == null || searchQuery.trim().isEmpty()) {
+                response.sendError(400, "검색어를 입력해주세요.");
+                return;
+            }
+
+            Connection conn = null;
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            JSONArray results = new JSONArray();
+
+            try {
+                conn = DBConnection.getConnection();
+                
+                String sql = "SELECT store_id, store_name, store_category, store_address, store_phone, " +
+                            "store_hours, store_rating, store_image_url " +
+                            "FROM store WHERE store_name LIKE ? AND store_is_active = 1";
+                
+                ps = conn.prepareStatement(sql);
+                ps.setString(1, "%" + searchQuery + "%");
+                rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    JSONObject store = new JSONObject();
+                    store.put("id", rs.getInt("store_id"));
+                    store.put("name", rs.getString("store_name"));
+                    store.put("category", rs.getString("store_category"));
+                    store.put("address", rs.getString("store_address"));
+                    store.put("phone", rs.getString("store_phone"));
+                    store.put("hours", rs.getString("store_hours"));
+                    store.put("rating", rs.getDouble("store_rating"));
+                    store.put("imageUrl", rs.getString("store_image_url"));
+                    results.add(store);
                 }
-                if(!found){
-          %>
-                  <div class="no-results">
-                    <img src="images/no-results.svg" alt="검색 결과 없음" />
-                    <p>'<%= query %>'에 대한<br>검색 결과가 없습니다</p>
-                  </div>
-          <%
-                }
-              } catch(Exception e) {
-          %>
-                <div class="no-results">
-                  <img src="images/error.svg" alt="오류 발생" />
-                  <p>오류가 발생했습니다<br><%= e.getMessage() %></p>
-                </div>
-          <%
-              } finally {
-                if(rs != null) rs.close();
-                if(pstmt != null) pstmt.close();
-                if(conn != null) conn.close();
-              }
+
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                out.print(results.toJSONString());
+                
+            } catch (Exception e) {
+                response.sendError(500, "서버 오류가 발생했습니다: " + e.getMessage());
+                e.printStackTrace();
+            } finally {
+                if (rs != null) try { rs.close(); } catch (SQLException e) { }
+                if (ps != null) try { ps.close(); } catch (SQLException e) { }
+                if (conn != null) try { conn.close(); } catch (SQLException e) { }
             }
           %>
         </div>

@@ -4,6 +4,8 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.TimeZone" %>
+<%@ page import="util.DBConnection" %>
+
 <%!
     // 오전/오후 또는 24시간 표기를 "HH:mm:ss"로 변환 (유니코드 정규화 적용 + 정규식)
     public String parseTimeStr(String timeStr) {
@@ -69,11 +71,6 @@
 <body>
 <div class="container">
 <%
-    // DB 연결 정보
-    String dbURL = "jdbc:mysql://localhost:3306/scrs?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Seoul";
-    String dbUser = "root";
-    String dbPass = "mysql123";
-
     // 세션에서 사용자 ID 가져오기
     String userIdSession = (String) session.getAttribute("user_id");
     if (userIdSession == null || userIdSession.trim().isEmpty()) {
@@ -118,8 +115,7 @@
     ResultSet rs = null;
     
     try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+        conn = DBConnection.getConnection();
         conn.setAutoCommit(false);  // 트랜잭션 시작
 
         // 날짜/시간 파싱
@@ -190,9 +186,6 @@
         // 예약 또는 대기 등록
         if (isWaiting) {
             System.out.println("대기 등록 처리 시작");
-            System.out.println("사용자 ID: " + userIdSession);
-            System.out.println("매장 ID: " + storeId);
-            System.out.println("예약 일시: " + reservationDateTime);
             
             // 대기 목록에 추가
             ps = conn.prepareStatement(
@@ -206,7 +199,6 @@
             ps.setTimestamp(4, reservationDateTime);
             
             int waitingResult = ps.executeUpdate();
-            System.out.println("대기 등록 결과: " + waitingResult);
             
             if (waitingResult == 0) {
                 throw new Exception("대기 등록에 실패했습니다.");
@@ -216,13 +208,10 @@
             int waitId = 0;
             if (rs.next()) {
                 waitId = rs.getInt(1);
-                System.out.println("생성된 대기 ID: " + waitId);
                 out.println("<div class='success'>대기 등록이 완료되었습니다. (대기번호: " + waitId + ")</div>");
             } else {
                 throw new Exception("대기 ID를 가져오는데 실패했습니다.");
             }
-            rs.close();
-            ps.close();
         } else {
             // 일반 예약 처리
             ps = conn.prepareStatement(
@@ -243,21 +232,41 @@
             rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 int reservationId = rs.getInt(1);
+                
+                // 결제 정보 생성
+                ps = conn.prepareStatement(
+                    "INSERT INTO payment (payment_reservation_id, payment_method_id, payment_amount, payment_status) " +
+                    "VALUES (?, 1, 0, 'PENDING')"
+                );
+                ps.setInt(1, reservationId);
+                ps.executeUpdate();
+                
                 out.println("<div class='success'>예약이 완료되었습니다. (예약번호: " + reservationId + ")</div>");
             }
         }
 
         conn.commit();  // 트랜잭션 커밋
-        System.out.println("트랜잭션 커밋 완료");
+        
     } catch (Exception e) {
         if (conn != null) {
-            try { conn.rollback(); } catch (SQLException ex) {}
+            try {
+                conn.rollback();  // 오류 발생 시 롤백
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
         }
+        StringWriter sw = new StringWriter();
+        e.printStackTrace(new PrintWriter(sw));
+        String stackTrace = sw.toString();
+        
+        System.out.println("Error: " + e.getMessage());
+        System.out.println("Stack Trace: " + stackTrace);
+        
         out.println("<div class='error'>" + e.getMessage() + "</div>");
     } finally {
-        if (rs != null) try { rs.close(); } catch (Exception ex) {}
-        if (ps != null) try { ps.close(); } catch (Exception ex) {}
-        if (conn != null) try { conn.close(); } catch (Exception ex) {}
+        if (rs != null) try { rs.close(); } catch (SQLException e) { }
+        if (ps != null) try { ps.close(); } catch (SQLException e) { }
+        if (conn != null) try { conn.close(); } catch (SQLException e) { }
     }
 %>
 <script>

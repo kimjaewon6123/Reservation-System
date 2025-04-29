@@ -1,57 +1,53 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="util.DBConnection" %>
+<%@ page import="org.json.simple.*" %>
+
 <%
-request.setCharacterEncoding("UTF-8");
+    request.setCharacterEncoding("UTF-8");
+    String userId = request.getParameter("user_id");
+    String userPw = request.getParameter("user_password");
 
-String userId = request.getParameter("userId");
-String userPw = request.getParameter("userPw");
-
-String dbURL = "jdbc:mysql://localhost:3306/scrs";
-String dbUser = "root";
-String dbPass = "mysql123";
-
-Connection conn = null;
-PreparedStatement pstmt = null;
-ResultSet rs = null;
-
-try {
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
-    String sql = "SELECT user_name FROM user WHERE user_id = ? AND user_password = ?";
-    pstmt = conn.prepareStatement(sql);
-    pstmt.setString(1, userId);
-    pstmt.setString(2, userPw);
-    rs = pstmt.executeQuery();
-
-    if (rs.next()) {
-        String userName = rs.getString("user_name");
-
-        // 세션 저장: 다른 페이지와 일치하도록 "user_id" 키 사용
-        session.setAttribute("user_id", userId);
-        session.setAttribute("userName", userName);
-%>
-        <script>
-          // localStorage에도 필요한 정보를 저장 (키 이름도 일관되게)
-          localStorage.setItem("isLoggedIn", "true");
-          localStorage.setItem("userName", "<%= userName %>");
-          localStorage.setItem("userId", "<%= userId %>");
-          window.location.href = "index.jsp";
-        </script>
-<%
-    } else {
-%>
-        <script>
-          alert("로그인 실패: 아이디 또는 비밀번호가 틀렸습니다.");
-          window.location.href = "login.html";
-        </script>
-<%
+    if (userId == null || userPw == null || userId.trim().isEmpty() || userPw.trim().isEmpty()) {
+        response.sendError(400, "아이디와 비밀번호를 입력해주세요.");
+        return;
     }
-} catch (Exception e) {
-    out.println("오류 발생: " + e.getMessage());
-    e.printStackTrace();
-} finally {
-    if (rs != null) rs.close();
-    if (pstmt != null) pstmt.close();
-    if (conn != null) conn.close();
-}
+
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    JSONObject result = new JSONObject();
+
+    try {
+        conn = DBConnection.getConnection();
+        String sql = "SELECT user_id, user_name, user_status FROM user WHERE user_id = ? AND user_password = ? AND user_status = 'ACTIVE'";
+        ps = conn.prepareStatement(sql);
+        ps.setString(1, userId);
+        ps.setString(2, userPw);
+        rs = ps.executeQuery();
+
+        if (rs.next()) {
+            session.setAttribute("user_id", rs.getString("user_id"));
+            session.setAttribute("user_name", rs.getString("user_name"));
+            
+            result.put("success", true);
+            result.put("user_id", rs.getString("user_id"));
+            result.put("user_name", rs.getString("user_name"));
+        } else {
+            result.put("success", false);
+            result.put("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+        }
+
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.print(result.toJSONString());
+
+    } catch (Exception e) {
+        response.sendError(500, "서버 오류가 발생했습니다: " + e.getMessage());
+        e.printStackTrace();
+    } finally {
+        if (rs != null) try { rs.close(); } catch (SQLException e) { }
+        if (ps != null) try { ps.close(); } catch (SQLException e) { }
+        if (conn != null) try { conn.close(); } catch (SQLException e) { }
+    }
 %>

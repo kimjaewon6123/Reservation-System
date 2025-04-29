@@ -1,0 +1,245 @@
+.screen {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 375px;
+  height: 812px;
+  position: relative;
+}
+
+.screen .frame {
+  width: 281px;
+  gap: 16px;
+  top: 220px;
+  left: 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.screen .image-removebg {
+  position: relative;
+  width: 118px;
+  height: 122px;
+  object-fit: cover;
+}
+
+.screen .text-wrapper {
+  position: relative;
+  align-self: stretch;
+  background: linear-gradient(
+    90deg,
+    rgba(182, 137, 255, 1) 0%,
+    rgba(124, 41, 255, 1) 100%
+  );
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Pretendard-Bold", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 35px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .line {
+  top: 432px;
+  left: 34px;
+  position: absolute;
+  width: 299px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.screen .img {
+  top: 525px;
+  left: 43px;
+  position: absolute;
+  width: 299px;
+  height: 1px;
+  object-fit: cover;
+}
+
+.screen .frame-2 {
+  width: 261px;
+  gap: 9px;
+  top: 451px;
+  left: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.screen .p {
+  margin-top: -1.00px;
+  font-weight: 400;
+  color: #565656;
+  font-size: 19px;
+  position: relative;
+  align-self: stretch;
+  font-family: "Pretendard-SemiBold", Helvetica;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .span {
+  font-weight: 600;
+}
+
+.screen .text-wrapper-2 {
+  font-family: "Pretendard-Black", Helvetica;
+  font-weight: 900;
+}
+
+.screen .text-wrapper-3 {
+  font-weight: 600;
+  color: #6c6c6c;
+  font-size: 13px;
+  position: relative;
+  align-self: stretch;
+  font-family: "Pretendard-SemiBold", Helvetica;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.screen .status-bars {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 3px 0px 0px;
+  position: absolute;
+  top: 0;
+  left: -7px;
+}
+
+.screen .statusbar-ios {
+  position: relative;
+  width: 390px;
+  height: 47px;
+}
+
+.screen .left-side {
+  position: absolute;
+  width: 54px;
+  height: 21px;
+  top: 14px;
+  left: 27px;
+}
+
+.screen .statusbars-time {
+  position: relative;
+  height: 21px;
+  border-radius: 24px;
+}
+
+.screen .time {
+  position: absolute;
+  width: 54px;
+  top: 1px;
+  left: 0;
+  font-family: var(--body-bold-font-family);
+  font-weight: var(--body-bold-font-weight);
+  color: var(--label-colorlightprimary);
+  font-size: var(--body-bold-font-size);
+  text-align: center;
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  white-space: nowrap;
+  font-style: var(--body-bold-font-style);
+}
+
+.screen .right-side {
+  position: absolute;
+  width: 78px;
+  height: 13px;
+  top: 19px;
+  left: 286px;
+}
+
+.screen .icon-mobile-signal {
+  position: absolute;
+  width: 18px;
+  height: 12px;
+  top: 0;
+  left: 0;
+}
+
+.screen .wifi {
+  position: absolute;
+  width: 17px;
+  height: 12px;
+  top: 0;
+  left: 26px;
+}
+
+.screen .statusbar-battery {
+  position: absolute;
+  width: 27px;
+  height: 13px;
+  top: 0;
+  left: 51px;
+}
+
+.screen .overlap-group {
+  position: absolute;
+  width: 25px;
+  height: 14px;
+  top: -1px;
+  left: 0;
+}
+
+.screen .outline {
+  position: absolute;
+  width: 25px;
+  height: 13px;
+  top: 1px;
+  left: 0;
+}
+
+.screen .percentage {
+  position: absolute;
+  height: 13px;
+  top: 0;
+  left: 6px;
+  font-family: "SF Pro Text-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--label-colordarkprimary);
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0.06px;
+  line-height: 13px;
+  white-space: nowrap;
+}
+
+.screen .battery-end {
+  position: absolute;
+  width: 1px;
+  height: 4px;
+  top: 5px;
+  left: 26px;
+}
+
+.screen .arrow {
+  position: absolute;
+  width: 19px;
+  height: 15px;
+  top: 88px;
+  left: 33px;
+}
