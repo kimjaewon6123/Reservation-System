@@ -24,7 +24,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <title>Index Page with Overlaid Search</title>
+    <title>예약 시스템</title>
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/styleguide.css" />
     <link rel="stylesheet" href="css/style.css" />
