@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 시스템</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>예약 시스템</h1>
+        
+        <section class="search-section">
+            <h2>검색</h2>
+            <div class="search-box">
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button>검색</button>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2>카테고리</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <h3>식당</h3>
+                    <p>맛있는 식사를 예약하세요</p>
+                </div>
+                <div class="category-item">
+                    <h3>호텔</h3>
+                    <p>편안한 숙박을 예약하세요</p>
+                </div>
+                <div class="category-item">
+                    <h3>병원</h3>
+                    <p>진료 예약을 하세요</p>
+                </div>
+                <div class="category-item">
+                    <h3>미용실</h3>
+                    <p>헤어 스타일링을 예약하세요</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 
