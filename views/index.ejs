@@ -1,96 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>매장 예약 시스템</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title><%= title %></title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <!-- 헤더 영역 -->
-      <header class="header">
-        <div class="logo">SCRS</div>
-        <div class="notification">
-          <a href="/notify">
-            <i class="icon-bell">🔔</i>
-            <% if (notifyCount > 0) { %>
-              <span class="notification-badge"><%= notifyCount %></span>
-            <% } %>
-          </a>
-        </div>
-      </header>
-
-      <!-- 검색바 -->
-      <div class="search-bar">
-        <i class="icon-search">🔍</i>
-        <input type="text" placeholder="매장 검색..." />
-      </div>
-
-      <!-- 위치 선택 -->
-      <div class="location-select">
-        <i class="icon-location">📍</i>
-        <span>전국</span>
-      </div>
-
-      <!-- 프로모션 배너 -->
-      <div class="promotion-banner">
-        <h2>예약 문의 해보고<br>포기하지 마세요</h2>
-        <p>직원과 전화 상담 50% 할인!</p>
-      </div>
-
-      <!-- 카테고리 그리드 -->
-      <div class="category-grid">
-        <a href="/category/hair" class="category-item">
-          <div class="icon">💇</div>
-          <span>헤어샵</span>
-        </a>
-        <a href="/category/nail" class="category-item">
-          <div class="icon">💅</div>
-          <span>네일샵</span>
-        </a>
-        <a href="/category/makeup" class="category-item">
-          <div class="icon">💄</div>
-          <span>메이크업</span>
-        </a>
-        <a href="/category/aesthetic" class="category-item">
-          <div class="icon">✨</div>
-          <span>에스테틱</span>
-        </a>
-        <a href="/category/more" class="category-item">
-          <div class="icon">➕</div>
-          <span>전체보기</span>
-        </a>
-      </div>
-
-      <!-- 추천 매장 섹션 -->
-      <section class="store-section">
-        <div class="section-header">
-          <h2 class="section-title">시슬별 제안 매장</h2>
-          <a href="/stores">더보기</a>
-        </div>
-        <div class="store-grid">
-          <% featuredStores.forEach(function(store) { %>
-            <div class="store-card">
-              <img src="<%= store.store_image || '/images/default-store.jpg' %>" alt="<%= store.store_name %>">
-              <div class="store-info">
-                <h3 class="store-name"><%= store.store_name %></h3>
-                <div class="store-rating">
-                  ⭐ <%= store.store_rating.toFixed(1) %> (<%= store.store_review_count %>)
-                </div>
-              </div>
-            </div>
-          <% }); %>
-        </div>
-      </section>
-
-      <!-- 푸터 -->
-      <footer class="main-footer">
-        <p>&copy; 2024 매장 예약 시스템. All rights reserved.</p>
-      </footer>
+      <h1><%= title %></h1>
+      <p>예약 시스템에 오신 것을 환영합니다!</p>
     </div>
-
-    <script src="/js/main.js"></script>
   </body>
 </html> 
