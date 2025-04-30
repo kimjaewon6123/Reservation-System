@@ -1,14 +1,11 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS",
-    "buildCommand": "mvnw.cmd clean package -DskipTests"
+    "builder": "NIXPACKS"
   },
   "deploy": {
     "numReplicas": 1,
-    "startCommand": "java -Dserver.port=$PORT -Dspring.profiles.active=prod $JAVA_OPTS -jar target/reservation-system-1.0-SNAPSHOT.jar",
-    "healthcheckPath": "/actuator/health",
-    "healthcheckTimeout": 100,
+    "startCommand": "java -jar target/reservation-system-1.0-SNAPSHOT.jar",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 3
   }
