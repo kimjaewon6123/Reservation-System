@@ -1,9 +1,0 @@
-[build]
-builder = "MAVEN"
-buildCommand = "mvn clean package"
-
-[deploy]
-startCommand = "java -Dserver.port=$PORT -jar target/*.jar"
-healthcheckPath = "/"
-healthcheckTimeout = 300
-restartPolicyType = "ON_FAILURE" 

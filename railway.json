@@ -2,12 +2,14 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "mvn clean package"
+    "buildCommand": "./mvnw clean package -DskipTests"
   },
   "deploy": {
-    "startCommand": "java -Dserver.port=$PORT $JAVA_OPTS -jar target/reservation-system-1.0-SNAPSHOT.jar",
-    "healthcheckPath": "/",
+    "numReplicas": 1,
+    "startCommand": "java -Dserver.port=$PORT -Dspring.profiles.active=prod $JAVA_OPTS -jar target/reservation-system-1.0-SNAPSHOT.jar",
+    "healthcheckPath": "/actuator/health",
     "healthcheckTimeout": 100,
-    "restartPolicyType": "ON_FAILURE"
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3
   }
 } 
